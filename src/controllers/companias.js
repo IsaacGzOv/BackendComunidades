@@ -45,4 +45,19 @@ CompaniasCtr.createCompania = async (req, res) => {
     });
 };
 
+CompaniasCtr.deleteCompania = async (req, res) => {
+    const idCompania = req.params.idCompania;
+    const connection = await connect();
+    const result = await connection.query('DELETE FROM Compania WHERE idCompania = ?', [idCompania]);
+    result[0].affectedRows != 0 ?
+        res.json({
+            msg: 'Registro eliminado con exito',
+            ok: true
+        }) :
+        res.json({
+            msg: 'Error al eliminar...',
+            ok: false
+        });
+};
+
 module.exports = CompaniasCtr;

@@ -42,3 +42,7 @@ Content-Type: application/json
     "SitioWeb": "www.web.com",
     "Contacto": "asd@ac.com"
 }
+
+
+###
+DELETE {{api}}companias/delete-compania/1
