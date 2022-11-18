@@ -19,6 +19,9 @@ Content-Type: application/json
     "Telefono": "12345"
 }
 
+###
+DELETE {{api}}usuarios/delete-usuario/1
+
 
 ##### Tabla Companias
 

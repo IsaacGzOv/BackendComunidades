@@ -22,7 +22,7 @@ UsuariosCtr.getUsuario = async (req, res) => {
             msg: 'No existe registros',
             ok: false
         });
-}
+};
 
 UsuariosCtr.createUsuario = async (req, res) => {
     const Nombre = req.body.Nombre;
@@ -45,6 +45,22 @@ UsuariosCtr.createUsuario = async (req, res) => {
         id: results.insertId,
         ...req.body
     });
-}
+};
+
+UsuariosCtr.deleteUsuario  = async (req, res) => {
+    const idUsuario = req.params.idUsuario;
+    const connection = await connect();
+    
+    const result = await connection.query('DELETE FROM Usuarios WHERE idUsuario = ?', [idUsuario]);
+    result[0].affectedRows != 0 ?
+        res.json({
+            msg: 'Usuario eliminado con exito',
+            ok: true
+        }) :
+        res.json({
+            msg: 'Error al eliminar....',
+            ok: false
+        });
+};
 
 module.exports = UsuariosCtr;
