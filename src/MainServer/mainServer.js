@@ -4,10 +4,12 @@ const cors = require('cors');
 
 // routes
 const Usuarios = require('../Routes/usuarios');
+const Companias = require('../Routes/companias');
 
 class MainServer {
     // endpoints
     EndPointUsuarios = '/usuarios';
+    EndPointCompanias = '/companias';
     
     constructor(port) {
         this.port = port;
@@ -36,6 +38,7 @@ class MainServer {
 
     asingRoutes() {
         this.app.use(this.EndPointUsuarios, Usuarios);
+        this.app.use(this.EndPointCompanias, Companias);
     }
 }
 

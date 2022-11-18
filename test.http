@@ -18,3 +18,24 @@ Content-Type: application/json
     "Curp": "GOOI",
     "Telefono": "12345"
 }
+
+
+##### Tabla Companias
+
+#####
+GET {{api}}companias/get-companias
+
+###
+GET {{api}}companias/get-compania/1
+
+###
+POST {{api}}companias/create-compania
+Content-Type: application/json
+
+{
+    "Nombre": "Gonzer S.A C.V",
+    "Ubicacion":"Ags ags",
+    "Descripcion": "Empresa agendadora",
+    "SitioWeb": "www.web.com",
+    "Contacto": "asd@ac.com"
+}
