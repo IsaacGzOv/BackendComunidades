@@ -1,0 +1,20 @@
+@api = http://localhost:3000/
+
+#####
+GET {{api}}usuarios/get-usuarios
+
+###
+GET {{api}}usuarios/get-usuario/1
+
+###
+POST {{api}}usuarios/create-usuario
+Content-Type: application/json
+
+{
+    "Nombre": "Isaac",
+    "Apellido":"Gonzalez",
+    "Correo": "a@a.com",
+    "Contrasena": "123",
+    "Curp": "GOOI",
+    "Telefono": "12345"
+}
