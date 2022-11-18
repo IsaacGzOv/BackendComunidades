@@ -11,3 +11,12 @@ CREATE TABLE IF NOT EXISTS Usuarios(
     Curp VARCHAR(20),
     Telefono VARCHAR(10)
 );
+
+CREATE TABLE IF NOT EXISTS Compania(
+    idCompania INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(50),
+    Ubicacion VARCHAR(50),
+    Descripcion VARCHAR(50),
+    SitioWeb VARCHAR(50),
+    Contacto VARCHAR(50)
+);
