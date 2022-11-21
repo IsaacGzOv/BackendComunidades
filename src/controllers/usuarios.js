@@ -63,4 +63,22 @@ UsuariosCtr.deleteUsuario  = async (req, res) => {
         });
 };
 
+UsuariosCtr.updateUsuario = async (req, res) => {
+    const idUsuario = req.params.idUsuario;
+    const connection = await connect();
+    const result = await connection.query('UPDATE Usuarios SET ? WHERE idUsuario = ?', [
+        req.body,
+        idUsuario
+    ]);
+    result[0].affectedRows === 0 ?
+        res.json({
+            msg: "Error al modificar...",
+            ok: false
+        }) :
+        res.json({
+            msg: "Registro modificado con exito",
+            ok: true
+        });
+};
+
 module.exports = UsuariosCtr;

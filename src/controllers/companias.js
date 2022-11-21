@@ -60,4 +60,22 @@ CompaniasCtr.deleteCompania = async (req, res) => {
         });
 };
 
+CompaniasCtr.updateCompania = async (req, res) => {
+    const idCompania = req.params.idCompania;
+    const connection = await connect();
+    const result = await connection.query('UPDATE Compania SET ? WHERE idCompania = ?', [
+        req.body,
+        idCompania
+    ]);
+    result[0].affectedRows === 0 ?
+        res.json({
+            msg: "Error al modificar...",
+            ok: false
+        }) :
+        res.json({
+            msg: "Registro modificado con exito",
+            ok: true
+        });
+};
+
 module.exports = CompaniasCtr;

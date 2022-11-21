@@ -22,6 +22,19 @@ Content-Type: application/json
 ###
 DELETE {{api}}usuarios/delete-usuario/1
 
+###
+PUT {{api}}usuarios/update-usuario/1
+Content-Type: application/json
+
+{
+    "Nombre": "Fraco",
+    "Apellido":"Olv",
+    "Correo": "a@a.com",
+    "Contrasena": "123",
+    "Curp": "FAAC",
+    "Telefono": "12345"
+}
+
 
 ##### Tabla Companias
 
@@ -45,4 +58,16 @@ Content-Type: application/json
 
 
 ###
-DELETE {{api}}companias/delete-compania/1
+DELETE {{api}}companias/delete-compania/3
+
+###
+PUT {{api}}companias/update-compania/3
+Content-Type:  application/json
+
+{
+    "Nombre": "Olva S.A C.V",
+    "Ubicacion": "Zacatecas",
+    "Descripcion": "Empresa de ventas",
+    "SitioWeb": "www.web2.com",
+    "Contacto": "oliva@olvia.com"
+} 

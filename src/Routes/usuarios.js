@@ -6,6 +6,6 @@ router.get('/get-usuarios', Usuarios.getUsuarios);
 router.get('/get-usuario/:idUsuario', Usuarios.getUsuario);
 router.post('/create-usuario', Usuarios.createUsuario);
 router.delete('/delete-usuario/:idUsuario', Usuarios.deleteUsuario);
-
+router.put('/update-usuario/:idUsuario', Usuarios.updateUsuario);
 
 module.exports = router;
