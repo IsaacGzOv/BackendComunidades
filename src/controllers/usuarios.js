@@ -13,7 +13,7 @@ UsuariosCtr.getUsuario = async (req, res) => {
     const [rows] = await connection.query('SELECT * FROM usuarios WHERE idUsuario = ?', [
         idUsuario
     ]);
-    res.length != 0 ?
+    rows.length != 0 ?
         res.json({
             obj: rows[0],
             ok: true
